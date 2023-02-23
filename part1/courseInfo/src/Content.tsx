@@ -1,28 +1,15 @@
 import React from 'react';
+import { CoursePart } from 'course';
 import Part from './Part';
 
-interface ContentProps {
-  part1: string;
-  exercises1: number;
-  part2: string;
-  exercises2: number;
-  part3: string;
-  exercises3: number;
-}
 
-function Content({
-  part1,
-  exercises1,
-  part2,
-  exercises2,
-  part3,
-  exercises3,
-}: ContentProps) {
+function Content({ parts }: { parts: CoursePart[] }) {
+  console.log(parts)
   return (
     <>
-    <Part part={part1} exercise={exercises1} />
-    <Part part={part2} exercise={exercises2} />
-    <Part part={part3} exercise={exercises3} />
+    <Part part={parts[0].name} exercise={parts[0].exercises} />
+    <Part part={parts[1].name} exercise={parts[1].exercises} />
+    <Part part={parts[2].name} exercise={parts[2].exercises} />
     </>
   );
 }
